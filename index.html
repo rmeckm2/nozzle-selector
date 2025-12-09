@@ -202,6 +202,24 @@ input,select{height:36px;padding:6px 10px;border:1px solid #d9dde3;border-radius
     overflow-x:auto;       /* still allow horizontal scroll if needed */
   }
 }
+/* ===== MOBILE TABLE BEHAVIOR FIX ===== */
+@media (max-width:900px){
+
+  /* Remove inner vertical scrolling on mobile */
+  #advTableWrap{
+    max-height: none;
+    overflow-y: visible;
+    overflow-x: auto;
+  }
+
+  /* Make table header stick to viewport instead of container */
+  #advTableWrap thead th{
+    position: sticky;
+    top: 56px; /* below the site header */
+    z-index: 5;
+    background: #f8fafc;
+  }
+}
 </style>
 </head>
 <body>
