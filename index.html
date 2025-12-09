@@ -36,8 +36,116 @@
 
 *{box-sizing:border-box}
 body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f6f7f9;color:#222}
-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:#0b2b4c;color:#fff;position:sticky;top:0;z-index:10}
-.title{font-weight:700}
+/* ===== CAPSTANAG HEADER + TOOL SELECTOR ===== */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:#000;
+}
+
+.header-inner{
+  max-width:1100px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
+/* Left cluster: logo + tool nav */
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+
+/* Logo only */
+.brand-link{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+}
+
+.brand-logo{
+  height:34px;
+  width:auto;
+  display:block;
+}
+
+/* Tool navigation */
+.tool-nav{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+  color:#e5e7eb;
+}
+
+.tool-label{
+  opacity:0.9;
+  font-weight:500;
+  white-space:nowrap;
+  margin-right:4px;
+}
+
+.tool-link{
+  padding:5px 14px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.35);
+  color:#e5e7eb;
+  text-decoration:none;
+  font-size:13px;
+  white-space:nowrap;
+}
+
+.tool-link:hover{
+  background:rgba(255,255,255,0.12);
+}
+
+.tool-link.active{
+  background:#ffffff;
+  color:#000;
+  border-color:#ffffff;
+}
+
+/* Print button */
+.print-btn{
+  height:32px;
+  padding:0 14px;
+  border:1px solid #d9dde3;
+  border-radius:8px;
+  background:#fff;
+  color:#000;
+  cursor:pointer;
+  font-size:12px;
+  white-space:nowrap;
+}
+
+/* Mobile layout */
+@media (max-width:720px){
+  .header-inner{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+
+  .header-left{
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  .tool-nav{
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  .print-btn{
+    align-self:flex-end;
+  }
+}
+
 /* Header controls (Units / Pressure / Outlet / Mode) */
 .header-controls{
   display:flex;
