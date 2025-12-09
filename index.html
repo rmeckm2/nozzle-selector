@@ -195,30 +195,30 @@ input,select{height:36px;padding:6px 10px;border:1px solid #d9dde3;border-radius
   border:1px solid rgba(0,0,0,0.15);
   background:#fff;
 }
-@media (max-width:900px){
-  #advTableWrap{
-    max-height:none;       /* let it grow full height */
-    overflow-y:visible;    /* no inner vertical scroll */
-    overflow-x:auto;       /* still allow horizontal scroll if needed */
-  }
-}
-/* ===== MOBILE TABLE BEHAVIOR FIX ===== */
+/* ===== MOBILE TABLE BEHAVIOR ===== */
 @media (max-width:900px){
 
   /* No inner vertical scroll on mobile */
   #advTableWrap{
-    max-height: none;
-    overflow-y: visible;
-    overflow-x: auto;
+    max-height:none;
+    overflow-y:visible;
+    overflow-x:auto;
   }
 
-  /* Turn OFF sticky header on mobile to avoid floating/overlap */
+  /* Turn OFF sticky header on mobile */
   #advTableWrap thead,
   #advTableWrap thead th{
-    position: static;
-    top: auto;
+    position:static;
+    top:auto;
+  }
+
+  /* Turn OFF sticky advanced options row on mobile */
+  #advOptionsRow{
+    position:static;
+    top:auto;
   }
 }
+
 </style>
 </head>
 <body>
