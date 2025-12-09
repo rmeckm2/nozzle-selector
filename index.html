@@ -222,13 +222,39 @@ input,select{height:36px;padding:6px 10px;border:1px solid #d9dde3;border-radius
 </style>
 </head>
 <body>
-<header>
-  <div class="title">CapstanAG • PWM Nozzle Selector</div>
-  <button id="printBtn"
-    style="height:32px;padding:0 12px;border:1px solid #d9dde3;border-radius:8px;background:#fff;cursor:pointer;">
-    Print
-  </button>
+<header class="site-header">
+  <div class="header-inner">
+
+    <div class="header-left">
+      <!-- Logo -->
+      <a href="https://www.capstanag.com" class="brand-link">
+        <img src="CapstanLogo.png" alt="CapstanAG" class="brand-logo">
+      </a>
+
+      <!-- Tool selector -->
+      <div class="tool-nav">
+        <span class="tool-label">Nozzle Selection Tools</span>
+
+        <!-- Ground = active on this page -->
+        <a href="https://rmeckm2.github.io/nozzle-selector/"
+           class="tool-link active">
+          Ground
+        </a>
+
+        <!-- Aerial -->
+        <a href="https://rmeckm2.github.io/swathpro-nozzle-select/"
+           class="tool-link">
+          Aerial
+        </a>
+      </div>
+    </div>
+
+    <!-- Keep existing print behavior -->
+    <button id="printBtn" class="print-btn">Print</button>
+
+  </div>
 </header>
+
 
 
 <div class="container">
