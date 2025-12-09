@@ -205,19 +205,24 @@ input,select{height:36px;padding:6px 10px;border:1px solid #d9dde3;border-radius
 /* ===== MOBILE TABLE BEHAVIOR FIX ===== */
 @media (max-width:900px){
 
-  /* Remove inner vertical scrolling on mobile */
+  /* No inner vertical scroll on mobile */
   #advTableWrap{
     max-height: none;
     overflow-y: visible;
     overflow-x: auto;
   }
 
-  /* Make table header stick to viewport instead of container */
-  #advTableWrap thead th{
+  /* Make the whole header row sticky, not each cell */
+  #advTableWrap thead{
     position: sticky;
-    top: 56px; /* below the site header */
+    top: 0;              /* stick to very top of the viewport */
     z-index: 5;
     background: #f8fafc;
+  }
+
+  /* Header cells themselves don't need sticky positioning */
+  #advTableWrap thead th{
+    position: static;
   }
 }
 </style>
