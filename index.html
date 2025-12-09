@@ -212,17 +212,11 @@ input,select{height:36px;padding:6px 10px;border:1px solid #d9dde3;border-radius
     overflow-x: auto;
   }
 
-  /* Make the whole header row sticky, not each cell */
-  #advTableWrap thead{
-    position: sticky;
-    top: 0;              /* stick to very top of the viewport */
-    z-index: 5;
-    background: #f8fafc;
-  }
-
-  /* Header cells themselves don't need sticky positioning */
+  /* Turn OFF sticky header on mobile to avoid floating/overlap */
+  #advTableWrap thead,
   #advTableWrap thead th{
     position: static;
+    top: auto;
   }
 }
 </style>
