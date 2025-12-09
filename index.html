@@ -76,11 +76,14 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
   padding:12px 14px;
   border-bottom:1px solid #eef1f5;
   font-weight:700;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
   background:#f0f4fa;
   color:#0b2b4c;
+
+  /* changed from flex to grid */
+  display:grid;
+  grid-template-columns:auto 1fr;  /* title | controls on wide screens */
+  align-items:center;
+  column-gap:12px;
 }
 .panel .content{padding:14px}
 .form-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
@@ -90,6 +93,32 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
   gap:12px;
   align-items:end;
   margin-bottom:8px;
+}
+/* Header controls container (Units / Outlet / Mode) */
+.header-controls{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:flex-end;
+}
+
+.header-control{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+/* Mobile: stack title above controls */
+@media (max-width:700px){
+  .panel .header{
+    grid-template-columns:1fr;   /* title on its own row */
+  }
+  .panel .header > span{
+    margin-bottom:6px;
+  }
+  .header-controls{
+    justify-content:flex-start;
+  }
 }
 .form-item{display:flex;flex-direction:column;gap:6px}
 label{font-size:12px;color:#444}
